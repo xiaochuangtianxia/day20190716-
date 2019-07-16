@@ -1,0 +1,31 @@
+
+spring:
+  application:
+    name: config-ssm
+  profiles:
+    active: dev
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+mybatis:
+  mapper-locations: mapping/*.xml
+  type-aliases-package: com.qf.java1902.pojo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

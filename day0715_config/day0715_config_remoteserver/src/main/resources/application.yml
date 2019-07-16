@@ -1,0 +1,15 @@
+
+server:
+  port: 9090
+spring:
+  application:
+    name: config-remoteserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiaochuangtianxia/myremoteconfig.git
+          search-paths: direct,mydirect #搜索的资源目录，多个用逗号分隔
+         # username:git账号
+         # password:git密码
+         # basedir:本地资源地址

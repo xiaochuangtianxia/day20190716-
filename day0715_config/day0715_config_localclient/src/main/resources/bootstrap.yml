@@ -1,0 +1,15 @@
+
+spring:
+  application:
+    name: config-localclient  #当前服务名
+  cloud:
+    config:
+      uri: http://localhost:9090  #搜索配置服务的地址
+      fail-fast: true #如果搜索不到，快速失败
+      #以下表示开启通过服务名来访问config-server
+      #discovery:
+        #enabled: true
+  profiles:
+    active: prod  #设置搜索开发配置，表示激活的是开发环境，查找顺序是：先进性明确激活的匹配，如果没有指定明确激活的（即集合为空）就找默认的；配置属性值从Environment读取
+
+  #默认搜索${spring.application.name}-${spring.profiles.active}.yml
